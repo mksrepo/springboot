@@ -1,0 +1,78 @@
+---
+config:
+  name: spring-boot-crud-demo
+  info: Spring boot jdbc demo app
+
+spring:
+  application:
+    name: spring-boot-crud-demo
+  resources:
+    static-locations: classpath:/
+
+#
+# 'cloud' profile
+# These settings are used on PCF only.
+# DO NOT SET ANYTHING HERE.
+# All settings are leveraged from the config server
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      enabled: true
+
+# for `cloud` profile security is disabled for testing only
+security:
+  basic:
+    enabled: false
+
+
+#
+# 'default' profile settings
+# These settings are only used when running locally either as a standalone or junit testing.
+# DO NOT USE THESE SETTINGS FOR CLOUD PROFILE.
+---
+spring:
+  profiles: default
+
+  # for local testing, do we need config server???
+  cloud:
+    config:
+      enabled: false
+
+  datasource:
+    # h2 (used for testing only)
+    # url: jdbc:h2:mem:demo;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    # DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=TRUE;DB_CLOSE_DELAY=-1;
+    url: jdbc:h2:~/h2db:demo;;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+
+    #
+    # local mysql instance
+    # url: jdbc:mysql://localhost:3306/demo
+    # driver-class-name: com.mysql.jdbc.Driver
+    # username: root
+    # password:
+
+# only for `default` profile, i.e. running locally, security is disabled
+security:
+  basic:
+    enabled: false
+  ignored: /swagger-resources/**
+
+endpoints:
+  restart:
+    enabled: true
+
+# allow access to all actuator endpoints
+management:
+  security:
+    enabled: false
+
+# Spring boot 2
+#  # show all actuator endpoints (only for POC)
+#  endpoints:
+#    enabled-by-default: true
+#    web:
+#      exposure:
+#        include: '*'

@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.cts.healthcare.integration</groupId>
-	<artifactId>claim.header.client</artifactId>
+	<artifactId>claim.client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>claim.header.client</name>
-	<description>Client project for Claim header service</description>
+	<name>claim.client</name>
+	<description>Client project for Claim service</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,11 +38,6 @@
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public class ClaimHeaderService {
 
 	public String getInfo() {
-		return "Claim Header service";
+		return "Claim Header service details.";
 	}
 }

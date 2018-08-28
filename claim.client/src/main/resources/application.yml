@@ -1,0 +1,6 @@
+# Server Config
+server:
+  port: ${port:8080}
+
+# Directory Service Config
+claim.header.service.endpoint.serviceinfo: http://localhost:1010/serviceinfo

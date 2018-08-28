@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.cts.healthcare.integration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

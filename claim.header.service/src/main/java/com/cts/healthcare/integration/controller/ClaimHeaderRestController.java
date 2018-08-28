@@ -19,7 +19,7 @@ public class ClaimHeaderRestController {
 	@Autowired
 	private ClaimHeaderService claimHeaderService;
 
-	@RequestMapping("/")
+	@RequestMapping("/serviceinfo")
 	public ResponseEntity<String> greeting() {
 		return new ResponseEntity<String>(claimHeaderService.getInfo(), HttpStatus.OK);
 	}

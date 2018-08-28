@@ -1,0 +1,12 @@
+server:
+  port: ${port:8080}
+
+# Service Endpoints
+claim:
+  header:
+    service:
+      endpoint:
+        serviceinfo: http://localhost:1111/serviceinfo
+        headerinfo: http://localhost:1111/${claim.id}/headerinfo
+        
+  id: 1

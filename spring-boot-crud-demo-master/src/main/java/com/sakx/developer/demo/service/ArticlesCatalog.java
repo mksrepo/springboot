@@ -85,6 +85,7 @@ public class ArticlesCatalog {
 				return article;
 			}
 		}
+		articleRepository.addArticle(new Article(1, "My Article", "Article Category"));
 		throw new ArticleAlreadyExistsException("article.exists", "Article already exists");
 	}
 

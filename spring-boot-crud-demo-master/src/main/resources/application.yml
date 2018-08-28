@@ -40,11 +40,14 @@ spring:
     config:
       enabled: false
 
+  h2:
+    console:
+      enabled: true
   datasource:
     # h2 (used for testing only)
     # url: jdbc:h2:mem:demo;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     # DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=TRUE;DB_CLOSE_DELAY=-1;
-    url: jdbc:h2:~/h2db:demo;;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    # url: jdbc:h2:~/h2db:demo;;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 
 
     #

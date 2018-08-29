@@ -24,7 +24,6 @@ public class ScriptServiceImpl implements ScriptService {
 		binding.setVariable("jdbcTemplate", repository.getJdbcTemplate());
 		GroovyScriptEngine engine = new GroovyScriptEngine(groovyScriptPath);
 		Object ret = engine.run(scriptName + ".groovy", binding);
-		System.out.println(ret);
 		return ret.toString();
 	}
 

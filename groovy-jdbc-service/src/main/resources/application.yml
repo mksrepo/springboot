@@ -1,0 +1,7 @@
+spring:
+  h2:
+    console:
+      enabled: true
+groovy:
+  script:
+    path: /Users/mrinmaysantra/Workshop/Projects/SpringBoot/groovy-jdbc-service

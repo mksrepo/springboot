@@ -36,17 +36,16 @@ public class ClaimHeaderController {
 	}
 
 	@RequestMapping(value = "/claim", method = RequestMethod.GET)
-	public ClaimHeader getClaiml() {
-		ParameterizedTypeReference<Resource<ClaimHeader>> inHeader = new ParameterizedTypeReference<Resource<ClaimHeader>>() {
-		};
-		ResponseEntity<Resource<ClaimHeader>> response = restTemplate.exchange(
-				RequestEntity.get(URI.create(this.URL_HEADERINFO)).accept(MediaTypes.HAL_JSON).build(), inHeader);
+	public ClaimHeader getClaim() {
+		ParameterizedTypeReference<Resource<ClaimHeader>> inHeader = new ParameterizedTypeReference<Resource<ClaimHeader>>(){};
+		ResponseEntity<Resource<ClaimHeader>> response = 
+				restTemplate.exchange(RequestEntity.get(URI.create(this.URL_HEADERINFO)).accept(MediaTypes.HAL_JSON).build(), inHeader);
 		assert response != null;
 		if (response.getStatusCode() == HttpStatus.OK) {
 			ClaimHeader outHeader = response.getBody().getContent();
 			assert outHeader != null;
 			return outHeader;
-		} else
-			return new ClaimHeader() ;
+		}
+		return new ClaimHeader() ;
 	}
 }

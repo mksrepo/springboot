@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import com.cts.healthcare.integration.domain.ClaimHeader;
 
-@Service("HeaderServic")
-public class ClaimHeaderService implements ClaimService {
+@Service("HeaderService")
+public class ClaimHeaderServiceImpl implements ClaimService {
 	@Override
 	public String getInfo() {
 		return "Claim Header Service.";

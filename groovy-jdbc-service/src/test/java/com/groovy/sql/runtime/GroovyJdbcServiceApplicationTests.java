@@ -1,4 +1,4 @@
-package com.cts.healthcare.integration;
+package com.groovy.sql.runtime;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

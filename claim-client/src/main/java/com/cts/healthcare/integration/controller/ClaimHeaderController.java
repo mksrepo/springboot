@@ -9,7 +9,6 @@ import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,8 +35,8 @@ public class ClaimHeaderController {
 		return restTemplate.getForObject(URL_SERVICEINFO, String.class);
 	}
 
-	@RequestMapping(value = "/claims/{claimId}/header", method = RequestMethod.GET)
-	public ClaimHeader getClaimlById(@PathVariable Integer claimId) {
+	@RequestMapping(value = "/claim", method = RequestMethod.GET)
+	public ClaimHeader getClaiml() {
 		ParameterizedTypeReference<Resource<ClaimHeader>> inHeader = new ParameterizedTypeReference<Resource<ClaimHeader>>() {
 		};
 		ResponseEntity<Resource<ClaimHeader>> response = restTemplate.exchange(
@@ -48,6 +47,6 @@ public class ClaimHeaderController {
 			assert outHeader != null;
 			return outHeader;
 		} else
-			return new ClaimHeader();
+			return new ClaimHeader() ;
 	}
 }

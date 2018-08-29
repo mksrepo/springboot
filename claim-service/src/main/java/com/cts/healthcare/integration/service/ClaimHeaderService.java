@@ -12,10 +12,11 @@ public class ClaimHeaderService implements ClaimService {
 	}
 
 	@Override
-	public ClaimHeader getHeaderById(Integer id) {
+	public ClaimHeader getClaim() {
 		ClaimHeader header = new ClaimHeader();
-		header.setClaimNumber(id);
-		header.setClaimType("Type1");
+		header.setClaimNumber(1);
+		header.setClaimType("Type-1");
+		header.setTotalChargeAmt(10000.00);
 		return header;
 	}
 }

@@ -5,5 +5,5 @@ import com.cts.healthcare.integration.domain.ClaimHeader;
 public interface ClaimService {
 	public String getInfo();
 
-	public ClaimHeader getHeaderById(Integer id);
+	public ClaimHeader getClaim();
 }

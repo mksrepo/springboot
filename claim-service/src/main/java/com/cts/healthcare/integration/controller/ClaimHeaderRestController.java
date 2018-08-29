@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cts.healthcare.integration.domain.ClaimHeader;
@@ -26,8 +25,8 @@ public class ClaimHeaderRestController {
 		return new ResponseEntity<String>(headerService.getInfo(), HttpStatus.OK);
 	}
 
-	@RequestMapping("/{claimId}/headerinfo")
-	public ResponseEntity<ClaimHeader> getHeaderById(@PathVariable Integer claimId) {
-		return new ResponseEntity<ClaimHeader>(headerService.getHeaderById(claimId), HttpStatus.OK);
+	@RequestMapping("/claimservice")
+	public ResponseEntity<ClaimHeader> getClaim() {
+		return new ResponseEntity<ClaimHeader>(headerService.getClaim(), HttpStatus.OK);
 	}
 }

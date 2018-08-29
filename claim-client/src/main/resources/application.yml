@@ -7,6 +7,6 @@ claim:
     service:
       endpoint:
         serviceinfo: http://localhost:1111/serviceinfo
-        headerinfo: http://localhost:1111/${claim.id}/headerinfo
+        headerinfo: http://localhost:1111/claimservice
         
   id: 1

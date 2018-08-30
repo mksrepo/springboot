@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: ${USERPROFILE}\\Desktop\\config-server-repo
+          uri: https://github.com/mksrepo/springboot
  
 #Disable security of the Management endpoint
 management:

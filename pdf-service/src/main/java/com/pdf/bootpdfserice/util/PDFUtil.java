@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import com.itextpdf.text.Document;
@@ -18,19 +20,20 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 public class PDFUtil {
 
-	public static String readPDFFields(final String FILE_NAME, final String FILE_PATH, final String PATH_SEPARATOR)
-			throws IOException {
-		PdfReader reader;
-		reader = new PdfReader(FILE_PATH + PATH_SEPARATOR + FILE_NAME);
+	public static Map<String, String> readPDFFields(final String FILE_NAME, final String FILE_PATH,
+			final String PATH_SEPARATOR) throws IOException {
+
+		Map<String, String> fieldMap = null;
+		PdfReader reader = new PdfReader(FILE_PATH + PATH_SEPARATOR + FILE_NAME);
 		AcroFields fields = reader.getAcroFields();
 
+		fieldMap = new HashMap<String, String>();
 		Set<String> fieldKeys = fields.getFields().keySet();
-		for (String itemKey : fieldKeys) {
-			System.out.println(itemKey + ": " + fields.getField(itemKey));
-		}
-		reader.close();
+		for (String key : fieldKeys)
+			fieldMap.put(key, fields.getField(key));
 
-		return "";
+		reader.close();
+		return fieldMap;
 	}
 
 	public static void writePDF(final String FILE_NAME, final String FILE_PATH, final String PATH_SEPARATOR)

@@ -10,10 +10,10 @@ import java.util.Date;
 public class Employee {
 	private String name;
 	private Date date;
-	private String minuteCode;
+	private Double productiveCode;
 	private Date swipeIn;
 	private Date swipeOut;
-	private Integer minute;
+	private Double spendMunite;
 
 	public String getName() {
 		return name;
@@ -31,12 +31,12 @@ public class Employee {
 		this.date = date;
 	}
 
-	public String getMinuteCode() {
-		return minuteCode;
+	public Double getProductiveCode() {
+		return productiveCode;
 	}
 
-	public void setMinuteCode(String minuteCode) {
-		this.minuteCode = minuteCode;
+	public void setProductiveCode(Double productiveCode) {
+		this.productiveCode = productiveCode;
 	}
 
 	public Date getSwipeIn() {
@@ -55,12 +55,12 @@ public class Employee {
 		this.swipeOut = swipeOut;
 	}
 
-	public Integer getMinute() {
-		return minute;
+	public Double getSpendMunite() {
+		return spendMunite;
 	}
 
-	public void setMinute(Integer minute) {
-		this.minute = minute;
+	public void setSpendMunite(Double spendMunite) {
+		this.spendMunite = spendMunite;
 	}
 
 }

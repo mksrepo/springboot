@@ -1,4 +1,4 @@
-package com.emp.empperfservice;
+package com.emp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

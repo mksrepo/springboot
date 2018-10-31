@@ -1,0 +1,1 @@
+1. We need actual Excel file, otherwise it would be 100% rework. 

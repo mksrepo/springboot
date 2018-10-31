@@ -10,7 +10,7 @@ public class AppConstants {
 	//file related
 	public static final String PATH_SEPARATOR = File.separator;
 	public static final String FILE_NAME = "timesheet.xlsx";
-	public static final String FILE_LOCATION = new StringBuilder().append(System.getProperty("user.dir")).append(PATH_SEPARATOR).append("resources").toString();
+	public static final String FILE_LOCATION = new StringBuilder().append(System.getProperty("user.dir")).toString();
 	public static final String FILE_PATH = new StringBuilder().append(FILE_LOCATION).append(PATH_SEPARATOR).append(FILE_NAME).toString();
 
 	// date related

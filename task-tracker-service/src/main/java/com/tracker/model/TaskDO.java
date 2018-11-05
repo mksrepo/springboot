@@ -1,4 +1,4 @@
-package com.tracker;
+package com.tracker.model;
 
 public class TaskDO {
 	private String title;

@@ -50,7 +50,7 @@
 				</select>
 			</td>
 			<td>
-				<input type="text" id="estHrs_0" name="estHrs_0" />
+				<input type="text" id="detailEstimateHrs_0" name="detailEstimateHrs_0" />
 			</td>
 			<td>
 				<label>0.0 </label>

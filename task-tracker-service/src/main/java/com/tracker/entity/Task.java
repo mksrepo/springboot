@@ -1,4 +1,4 @@
-package com.netflix.entity;
+package com.tracker.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

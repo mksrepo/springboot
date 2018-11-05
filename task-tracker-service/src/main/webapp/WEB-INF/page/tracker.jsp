@@ -4,9 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Task Tracker</title>
 </head>
 <body>
 	<span>Welcome Message: ${message}</span>
+	<table>
+		<tr>
+			<td>id</td>
+			<td>title</td>
+			<td>owner</td>
+			<td>status</td>
+			<td>estimatePoints</td>
+			<td>detailEstimateHrs</td>
+			<td>doneHrs</td>
+			<td>toDoHrs</td>
+		</tr>
+		<tr>
+			<td><label>12345</label></td>
+			<td><input type="text" id="id12345" name="id12345" /></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	12345
 </body>
 </html>

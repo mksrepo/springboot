@@ -18,7 +18,7 @@ public class Task {
 	private String title;
 	private String owner;
 	private String status;
-	private Double estimatePoints;
+	private String complexity;
 	private Double detailEstimateHrs;
 	private Double doneHrs;
 	private Double toDoHrs;
@@ -55,12 +55,12 @@ public class Task {
 		this.status = status;
 	}
 
-	public Double getEstimatePoints() {
-		return estimatePoints;
+	public String getComplexity() {
+		return complexity;
 	}
 
-	public void setEstimatePoints(Double estimatePoints) {
-		this.estimatePoints = estimatePoints;
+	public void setComplexitys(String complexity) {
+		this.complexity = complexity;
 	}
 
 	public Double getDetailEstimateHrs() {

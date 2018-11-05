@@ -2,7 +2,7 @@
 spring:
   mvc:
     view:
-      prefix: /WEB-INF/page
+      prefix: /WEB-INF/page/
       suffix: .jsp
 # Enabling H2 Console
   h2:

@@ -2,19 +2,16 @@ package com.tracker.api;
 
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping("/tracker")
 public class MainController {
 
 	private String helloMessage = "Welcome to task tracker!";
 
-	@GetMapping("/board")
-	@ResponseBody
+	@RequestMapping("/board")
 	public String showTracker(Map<String, String> model) {
 		model.put("message", helloMessage);
 		return "tracker";

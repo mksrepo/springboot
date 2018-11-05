@@ -8,7 +8,11 @@
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-    	test();
+    	$(".save").click(function(){
+    		var btnValue = $(this).val();
+    		var taskId=btnValue.substr(btnValue.indexOf('_')+1,btnValue.length);
+    		saveTask(taskId);
+    	});
  	});
 </script>
 </head>
@@ -16,50 +20,50 @@
 	<table>
 		<tr>
 			<td>Title</td>
-			<td>Id</td>
 			<td>Owner</td>
 			<td>Status</td>
 			<td>Complexity</td>
 			<td>Detail Estimate Hrs.</td>
 			<td>Done Hrs.</td>
+			<td>Effort Hrs.</td>
 			<td>To Do Hrs.</td>
 			<td>Action</td>
 		</tr>
 		<tr>
 			<td>
-				<input type="text" id="id12345" name="id12345" />
+				<input type="text" id="title_0" name="title_0" />
 			</td>
 			<td>
-				<label>12345</label>
+				<input type="text" id="owner_0" name="owner_0" />
 			</td>
 			<td>
-				<input type="text" id="owner12345" name="owner12345" />
-			</td>
-			<td>
-				<select id="status12345" name="status12345">
+				<select id="status_0" name="status_0">
 					<option value="Open">Open</option>
 					<option value="Completed">Completed</option>
 				</select>
 			</td>
 			<td>
-				<select id="complexity12345" name="complexity12345">
+				<select id="complexity_0" name="complexity_0">
 					<option value="Easy">Easy</option>
 					<option value="Average">Average</option>
 					<option value="Complex">Complex</option>
 				</select>
 			</td>
 			<td>
-				<input type="text" id="estHrs12345" name="estHrs12345" />
+				<input type="text" id="estHrs_0" name="estHrs_0" />
 			</td>
 			<td>
-				<input type="text" id="doneHrs12345" name="doneHrs12345" />
+				<label>0.0 </label>
 			</td>
 			<td>
-				<input type="text" id="todoHrs12345" name="todoHrs12345" />
+				<input type="text" id="effortHrs_0" name="effortHrs_0" />
 			</td>
 			<td>
-				<button id="save12345">Save</button>
-				<button id="close12345">Close</button>
+				<label>0.0 </label>
+			</td>
+			<td>
+				<button class="save" id="save" name="save" value="save_0">Save</button>
+				<button class="close" id="close" name="close" value="close_0">Close</button>
 			</td>
 		</tr>
 	</table>

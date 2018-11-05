@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/tracker")
 public class MainController {
 
-	private String helloMessage = "Welcome to task tracker!";
-
 	@RequestMapping("/board")
 	public String showTracker(Map<String, String> model) {
-		model.put("message", helloMessage);
 		return "tracker";
 	}
 

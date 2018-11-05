@@ -21,7 +21,20 @@ public class Task {
 	private String complexity;
 	private Double detailEstimateHrs;
 	private Double doneHrs;
+	private Double effortHrs;
 	private Double toDoHrs;
+
+	public Double getEffortHrs() {
+		return effortHrs;
+	}
+
+	public void setEffortHrs(Double effortHrs) {
+		this.effortHrs = effortHrs;
+	}
+
+	public void setComplexity(String complexity) {
+		this.complexity = complexity;
+	}
 
 	public Integer getId() {
 		return id;

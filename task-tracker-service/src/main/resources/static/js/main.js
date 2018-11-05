@@ -1,8 +1,24 @@
-function save() {
+function saveTask(taskId) {
+	var title = $('#title_'+taskId).val();
+	var owner = $('#owner_'+taskId).val();
+	var JSONString = '{"title":"'+title+'","owner":"'+owner+'"}';
+	var owner;
+	var status;
+	var complexity;
+	var detailEstimateHrs;
+	var doneHrs;
+	var effortHrs;
+	var toDoHrs;
 	$.ajax({
-		url : "http://rest-service.guides.spring.io/greeting"
-	}).then(function(data) {
-		$('.greeting-id').append(data.id);
-		$('.greeting-content').append(data.content);
-	});
+	   url: "/tracker/task/save",
+	   method: "POST",
+	   data: JSONString,
+	   dataType: 'json',
+	   contentType: "application/json",
+	   success: function(result,status,jqXHR ){
+		   alert("Task has been saved successfully.");
+	   },
+	   error(jqXHR, textStatus, errorThrown){
+	   }
+	}); 
 }

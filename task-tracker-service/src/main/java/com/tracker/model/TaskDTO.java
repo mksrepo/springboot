@@ -1,6 +1,6 @@
 package com.tracker.model;
 
-public class TaskDO {
+public class TaskDTO {
 	private String title;
 	private String owner;
 	private String status;

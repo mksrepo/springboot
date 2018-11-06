@@ -7,8 +7,8 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-    	$(".save").click(function(){
+	jQuery(document).ready(function() {
+    	jQuery(".save").click(function(){
     		var btnValue = $(this).val();
     		var taskId=btnValue.substr(btnValue.indexOf('_')+1,btnValue.length);
     		saveTask(taskId);

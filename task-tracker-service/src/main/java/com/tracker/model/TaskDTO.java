@@ -1,6 +1,7 @@
 package com.tracker.model;
 
 public class TaskDTO {
+	private String taskCode;
 	private String title;
 	private String owner;
 	private String status;
@@ -9,6 +10,14 @@ public class TaskDTO {
 	private Double doneHrs;
 	private Double effortHrs;
 	private Double toDoHrs;
+
+	public String getTaskCode() {
+		return taskCode;
+	}
+
+	public void setTaskCode(String taskCode) {
+		this.taskCode = taskCode;
+	}
 
 	public String getTitle() {
 		return title;

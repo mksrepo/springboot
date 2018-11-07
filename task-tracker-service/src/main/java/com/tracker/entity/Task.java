@@ -15,6 +15,7 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Integer id;
+	private String taskCode;
 	private String title;
 	private String owner;
 	private String status;
@@ -23,6 +24,15 @@ public class Task {
 	private Double doneHrs;
 	private Double effortHrs;
 	private Double toDoHrs;
+
+	
+	public String getTaskCode() {
+		return taskCode;
+	}
+
+	public void setTaskCode(String taskCode) {
+		this.taskCode = taskCode;
+	}
 
 	public Double getEffortHrs() {
 		return effortHrs;

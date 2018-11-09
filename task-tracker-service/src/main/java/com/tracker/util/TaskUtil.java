@@ -6,7 +6,11 @@ import com.tracker.entity.Task;
 import com.tracker.model.TaskDTO;
 
 public class TaskUtil {
-	public static Task convertToVo(ModelMapper modelMapper, TaskDTO taskVo) {
-		return (Task) modelMapper.map(taskVo, Task.class);
+	public static Task convertEntityToDTO(ModelMapper modelMapper, TaskDTO taskDTO) {
+		return (Task) modelMapper.map(taskDTO, Task.class);
+	}
+
+	public static TaskDTO convertDTOToEntity(ModelMapper modelMapper, Task task) {
+		return (TaskDTO) modelMapper.map(task, TaskDTO.class);
 	}
 }

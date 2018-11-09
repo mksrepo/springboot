@@ -1,15 +1,24 @@
 package com.tracker.model;
 
 public class TaskDTO {
+	private Integer id;
 	private String taskCode;
 	private String title;
 	private String owner;
 	private String status;
 	private String complexity;
-	private Double detailEstimateHrs;
-	private Double doneHrs;
-	private Double effortHrs;
-	private Double toDoHrs;
+	private Integer detailEstimateHrs;
+	private Integer doneHrs;
+	private Integer effortHrs;
+	private Integer toDoHrs;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getTaskCode() {
 		return taskCode;
@@ -51,35 +60,35 @@ public class TaskDTO {
 		this.complexity = complexity;
 	}
 
-	public Double getDetailEstimateHrs() {
+	public Integer getDetailEstimateHrs() {
 		return detailEstimateHrs;
 	}
 
-	public void setDetailEstimateHrs(Double detailEstimateHrs) {
+	public void setDetailEstimateHrs(Integer detailEstimateHrs) {
 		this.detailEstimateHrs = detailEstimateHrs;
 	}
 
-	public Double getDoneHrs() {
+	public Integer getDoneHrs() {
 		return doneHrs;
 	}
 
-	public void setDoneHrs(Double doneHrs) {
+	public void setDoneHrs(Integer doneHrs) {
 		this.doneHrs = doneHrs;
 	}
 
-	public Double getEffortHrs() {
+	public Integer getEffortHrs() {
 		return effortHrs;
 	}
 
-	public void setEffortHrs(Double effortHrs) {
+	public void setEffortHrs(Integer effortHrs) {
 		this.effortHrs = effortHrs;
 	}
 
-	public Double getToDoHrs() {
+	public Integer getToDoHrs() {
 		return toDoHrs;
 	}
 
-	public void setToDoHrs(Double toDoHrs) {
+	public void setToDoHrs(Integer toDoHrs) {
 		this.toDoHrs = toDoHrs;
 	}
 

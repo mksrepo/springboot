@@ -20,30 +20,17 @@ public class Task {
 	private String owner;
 	private String status;
 	private String complexity;
-	private Double detailEstimateHrs;
-	private Double doneHrs;
-	private Double effortHrs;
-	private Double toDoHrs;
+	private Integer detailEstimateHrs;
+	private Integer effortHrs;
+	private Integer doneHrs;
+	private Integer toDoHrs;
 
-	
-	public String getTaskCode() {
-		return taskCode;
-	}
-
-	public void setTaskCode(String taskCode) {
-		this.taskCode = taskCode;
-	}
-
-	public Double getEffortHrs() {
+	public Integer getEffortHrs() {
 		return effortHrs;
 	}
 
-	public void setEffortHrs(Double effortHrs) {
+	public void setEffortHrs(Integer effortHrs) {
 		this.effortHrs = effortHrs;
-	}
-
-	public void setComplexity(String complexity) {
-		this.complexity = complexity;
 	}
 
 	public Integer getId() {
@@ -52,6 +39,14 @@ public class Task {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getTaskCode() {
+		return taskCode;
+	}
+
+	public void setTaskCode(String taskCode) {
+		this.taskCode = taskCode;
 	}
 
 	public String getTitle() {
@@ -82,31 +77,31 @@ public class Task {
 		return complexity;
 	}
 
-	public void setComplexitys(String complexity) {
+	public void setComplexity(String complexity) {
 		this.complexity = complexity;
 	}
 
-	public Double getDetailEstimateHrs() {
+	public Integer getDetailEstimateHrs() {
 		return detailEstimateHrs;
 	}
 
-	public void setDetailEstimateHrs(Double detailEstimateHrs) {
+	public void setDetailEstimateHrs(Integer detailEstimateHrs) {
 		this.detailEstimateHrs = detailEstimateHrs;
 	}
 
-	public Double getDoneHrs() {
+	public Integer getDoneHrs() {
 		return doneHrs;
 	}
 
-	public void setDoneHrs(Double doneHrs) {
+	public void setDoneHrs(Integer doneHrs) {
 		this.doneHrs = doneHrs;
 	}
 
-	public Double getToDoHrs() {
+	public Integer getToDoHrs() {
 		return toDoHrs;
 	}
 
-	public void setToDoHrs(Double toDoHrs) {
+	public void setToDoHrs(Integer toDoHrs) {
 		this.toDoHrs = toDoHrs;
 	}
 

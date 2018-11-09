@@ -31,19 +31,18 @@ public class ActionController {
 	}
 
 	@RequestMapping(value = "/task/save", method = RequestMethod.POST)
-	public String addTask(@RequestBody TaskDTO taskDTO) {
+	public String addTask(@RequestBody TaskDTO taskDTO) throws Exception {
+		Task task = TaskUtil.convertEntityToDTO(modelMapper, taskDTO);
 		Boolean notEmptyFlag = taskDTO != null && taskDTO.getTaskCode() != null && taskDTO.getTaskCode().length() > 0;
-		if (notEmptyFlag) {
-			//Task task = TaskUtil.convertToVo(modelMapper, taskDTO);
-			Task task = taskRepo.getOne(1);
-			task.setTitle("lll");
-			task.setId(1);
-			taskRepo.save(task);
-		} else {
-			taskDTO.setTaskCode("TASK" + new Random().nextInt(50));
-			taskRepo.save(TaskUtil.convertToVo(modelMapper, taskDTO));
+		if (!notEmptyFlag) {
+			task.setDoneHrs(0);
+			task.setToDoHrs(task.getDetailEstimateHrs());
+			task.setTaskCode("TASK" + new Random().nextInt(100));
+		} else if (task.getEffortHrs() != null && task.getEffortHrs() <= task.getToDoHrs()) {
+			task.setDoneHrs(task.getDoneHrs() + task.getEffortHrs());
+			task.setToDoHrs(task.getToDoHrs() - task.getEffortHrs());
 		}
-
-		return taskDTO.getTitle() + " shabeen saved successfully!";
+		taskRepo.save(task);
+		return "The task \"" + taskDTO.getTitle() + "\" has been saved successfully.";
 	}
 }

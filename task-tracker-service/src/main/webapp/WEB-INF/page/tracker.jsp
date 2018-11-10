@@ -81,7 +81,7 @@
 					Add<i class="fa fa-plus-square ml-1"></i>
 				</a>
 				<a href="/tracker/export" class="export_task1 btn btn-info btn-rounded btn-sm waves-effect waves-light">
-					Export<i class="fa fa-plus-square ml-1"></i>
+					Export<i class="fa fa-file-excel-o ml-1"></i>
 				</a>
 			</div>
 		</div>
@@ -146,7 +146,7 @@
 									<input type="hidden" id="id_${loop.count}" name="id_${loop.count}"  value="${task.id}"/>
 									<div class="text-center">
 										<a href="" class="save_task btn btn-info btn-rounded btn-sm waves-effect waves-light" data-index="${loop.count}">
-											Update
+											Update <i class="fa fa-edit ml-1"></i>
 										</a>
 									</div>
 								</td>

@@ -1,18 +1,3 @@
-function exportExcel(index) {
-	$.ajax({
-	   url: "/tracker/export",
-	   method: "GET",
-	   data: "",
-	   dataType: 'text',
-	   contentType: "application/json",
-	   success: function(result, status, jqXHR){
-		   alert(result);
-	   },
-	   error(jqXHR, textStatus, errorThrown){
-		   console.log( errorThrown );
-	   }
-	}); 
-}
 
 function saveTask(index) {
 	var id = $('#id_'+index).val();

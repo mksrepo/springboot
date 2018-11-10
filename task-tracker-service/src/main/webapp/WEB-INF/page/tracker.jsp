@@ -13,8 +13,7 @@
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
-	    	jQuery(".save_task").click(function(){saveTask($(this).val());});
-	    	jQuery(".export_excel").click(function(){exportExcel();});
+	    	jQuery(".save_task").click(function(){saveTask($(this).data("index"));});
 	 	});
 	</script>
 </head>
@@ -69,7 +68,7 @@
 							<input type="hidden" id="doneHrs_0" name="doneHrs_0" value="0"/>
 							<input type="hidden" id="toDoHrs_0" name="toDoHrs_0" value=""/>
 							<input type="hidden" id="id_0" name="id_0"  value="0" />
-							<button class="save_task btn btn-outline-primary btn-block buttonAdd waves-effect waves-light" value="0">
+							<button class="save_task btn btn-outline-primary btn-block buttonAdd waves-effect waves-light" data-index="0">
 								Add Task <i class="fa fa-paper-plane-o ml-1"></i>
 							</button>
 						</div>
@@ -143,7 +142,7 @@
 								<td align="center">
 									<input type="hidden" id="id_${loop.count}" name="id_${loop.count}"  value="${task.id}"/>
 									<div class="text-center">
-										<a href="" class="save_task btn btn-info btn-rounded btn-sm waves-effect waves-light">
+										<a href="" class="save_task btn btn-info btn-rounded btn-sm waves-effect waves-light" data-index="${loop.count}">
 											Update
 										</a>
 									</div>

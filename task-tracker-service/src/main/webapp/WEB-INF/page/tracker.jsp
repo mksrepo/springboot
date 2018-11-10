@@ -68,7 +68,7 @@
 							<input type="hidden" id="doneHrs_0" name="doneHrs_0" value="0"/>
 							<input type="hidden" id="toDoHrs_0" name="toDoHrs_0" value=""/>
 							<input type="hidden" id="id_0" name="id_0"  value="0" />
-							<button class="save_task btn btn-outline-primary btn-block buttonAdd waves-effect waves-light" data-dismiss="modal" value="0">
+							<button class="save_task btn btn-outline-primary btn-block buttonAdd waves-effect waves-light" value="0">
 								Add Task <i class="fa fa-paper-plane-o ml-1"></i>
 							</button>
 						</div>

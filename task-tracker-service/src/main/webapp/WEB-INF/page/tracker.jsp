@@ -14,6 +14,7 @@
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 	    	jQuery(".save_task").click(function(){saveTask($(this).data("index"));});
+	    	jQuery(".export_task").click(function(){saveTask($(this).data("index"));});
 	 	});
 	</script>
 </head>
@@ -58,7 +59,7 @@
 							</div>
 							<div class="md-form mb-5">
 								<input type="text" id="detailEstimateHrs_0" class="form-control validate">
-								<label for="detailEstimateHrs_0">SalaEstimate Hrs.ry</label>
+								<label for="detailEstimateHrs_0">SalaEstimate Hrs.</label>
 							</div>
 						</div>
 						<div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
@@ -79,7 +80,7 @@
 				<a href="" class="btn btn-info btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#modalAdd">
 					Add<i class="fa fa-plus-square ml-1"></i>
 				</a>
-				<a href="" class="export_excel btn btn-info btn-rounded btn-sm waves-effect waves-light">
+				<a href="/tracker/export" class="export_task1 btn btn-info btn-rounded btn-sm waves-effect waves-light">
 					Export<i class="fa fa-plus-square ml-1"></i>
 				</a>
 			</div>
@@ -117,8 +118,10 @@
 									${task.owner}
 								</td>
 								<td>
-									<input type="hidden" id="status_${loop.count}" name="status_${loop.count}" value="${task.status}"/>
-									${task.status}
+									<select id="status_${loop.count}" class="browser-default custom-select">
+										<option ${"Open" eq task.status?'selected':""} value="Open">Open</option>
+										<option ${"Close" eq task.status?'selected':""} value="Close">Close</option>
+									</select>
 								</td>
 								<td>
 									<input type="hidden" id="complexity_${loop.count}" name="complexity_${loop.count}" value="${task.complexity}"/>

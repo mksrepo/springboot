@@ -1,0 +1,206 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.13.min.css"
+	rel="stylesheet">
+<style>
+.tr-color-selected {
+	background-color: hsla(196, 77%, 55%, 0.3) !important;
+	transition: all .2s ease-in;
+}
+</style>
+<style type="text/css">/* Chart.js */
+@
+-webkit-keyframes chartjs-render-animation {
+	from {opacity: 0.99
+}
+
+to {
+	opacity: 1
+}
+
+}
+@
+keyframes chartjs-render-animation {
+	from {opacity: 0.99
+}
+
+to {
+	opacity: 1
+}
+
+}
+.chartjs-render-monitor {
+	-webkit-animation: chartjs-render-animation 0.001s;
+	animation: chartjs-render-animation 0.001s;
+}
+</style>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+</head>
+<body aria-busy="true">
+	<div class="wrapper-modal-editor">
+
+		<div class="block my-4">
+			<div class="d-flex justify-content-center">
+				<p class="h5 text-primary createShowP">Development Tracking Tool</p>
+			</div>
+		</div>
+
+		<div class="row d-flex justify-content-center modalWrapper">
+			<div class="modal fade addNewInputs" id="modalAdd" tabindex="-1"
+				role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header text-center">
+							<h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Add
+								new form</h4>
+							<button type="button" class="close text-primary"
+								data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body mx-3">
+							<div class="md-form mb-5">
+								<input type="text" id="inputName" class="form-control validate">
+								<label data-error="wrong" data-success="right" for="inputName">Name</label>
+							</div>
+
+							<div class="md-form mb-5">
+								<input type="text" id="inputPosition"
+									class="form-control validate"> <label
+									data-error="wrong" data-success="right" for="inputPosition">Position</label>
+							</div>
+
+							<div class="md-form mb-5">
+								<input type="text" id="inputOfficeInput"
+									class="form-control validate"> <label
+									data-error="wrong" data-success="right" for="inputOfficeInput">Office</label>
+							</div>
+
+							<div class="md-form mb-5">
+								<input type="text" id="inputAge" class="form-control validate">
+								<label data-error="wrong" data-success="right" for="inputAge">Age</label>
+							</div>
+
+							<div class="md-form mb-5">
+								<input type="date" id="inputDate" class="form-control"
+									placeholder="Select Date"> <label data-error="wrong"
+									data-success="right" for="inputDate"></label>
+							</div>
+
+							<div class="md-form mb-5">
+								<input type="text" id="inputSalary"
+									class="form-control validate"> <label
+									data-error="wrong" data-success="right" for="inputSalary">Salary</label>
+							</div>
+
+						</div>
+						<div
+							class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
+							<button
+								class="btn btn-outline-primary btn-block buttonAdd waves-effect waves-light"
+								data-dismiss="modal">
+								Add Task <i class="fa fa-paper-plane-o ml-1"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<a href=""
+					class="btn btn-info btn-rounded btn-sm waves-effect waves-light"
+					data-toggle="modal" data-target="#modalAdd">Add<i
+					class="fa fa-plus-square ml-1"></i></a>
+			</div>
+		</div>
+
+		<table id="dtBasicExample" class="table table-striped table-bordered"
+			cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th class="th-sm">Name</th>
+					<th class="th-sm">Position</th>
+					<th class="th-sm">Office</th>
+					<th class="th-sm">Age</th>
+					<th class="th-sm">Start date</th>
+					<th class="th-sm">Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Tiger Nixon</td>
+					<td>System Architect</td>
+					<td>Edinburgh</td>
+					<td>61</td>
+					<td>2011/04/25</td>
+					<td>$320,800</td>
+				</tr>
+				<tr>
+					<td>Doris Wilder</td>
+					<td>Sales Assistant</td>
+					<td>Sidney</td>
+					<td>23</td>
+					<td>2010/09/20</td>
+					<td>$85,600</td>
+				</tr>
+				<tr>
+					<td>Angelica Ramos</td>
+					<td>Chief Executive Officer (CEO)</td>
+					<td>London</td>
+					<td>47</td>
+					<td>2009/10/09</td>
+					<td>$1,200,000</td>
+				</tr>
+				<tr>
+					<td>Gavin Joyce</td>
+					<td>Developer</td>
+					<td>Edinburgh</td>
+					<td>42</td>
+					<td>2010/12/22</td>
+					<td>$92,575</td>
+				</tr>
+				<tr>
+					<td>Jennifer Chang</td>
+					<td>Regional Director</td>
+					<td>Singapore</td>
+					<td>28</td>
+					<td>2010/11/14</td>
+					<td>$357,650</td>
+				</tr>
+				<tr>
+					<td>Brenden Wagner</td>
+					<td>Software Engineer</td>
+					<td>San Francisco</td>
+					<td>28</td>
+					<td>2011/06/07</td>
+					<td>$206,850</td>
+				</tr>
+				<tr>
+					<td>Prescott Bartlett</td>
+					<td>Technical Author</td>
+					<td>London</td>
+					<td>27</td>
+					<td>2011/05/07</td>
+					<td>$145,000</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="6">Developed by Khushboo</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<script type="text/javascript"
+		src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/compiled-4.5.13.min.js"></script>
+	<div class="hiddendiv common"></div>
+	<script type="text/javascript">
+		(function runJS() {
+			$('#dtBasicExample').mdbEditor();
+			$('.dataTables_length').addClass('bs-select');
+		})();
+	</script>
+</body>
+</html>

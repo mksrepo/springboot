@@ -8,6 +8,7 @@
 	<title>Development Tracking Tool</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.13.min.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
@@ -87,7 +88,7 @@
 		</div>
 		<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
-				<tr align="center">
+				<tr class="header-style">
 					<th class="th-sm">Title</th>
 					<th class="th-sm">Code</th>
 					<th class="th-sm">Owner</th>

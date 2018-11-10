@@ -11,8 +11,7 @@ function saveTask(index) {
 	var doneHrs = $('#doneHrs_'+index).val();
 	var requestPayload = '{"id":"'+id+'","taskCode":"'+taskCode+'","title":"'+title+'","owner":"'+owner+'","status":"'+status+'","complexity":"'+complexity+'","detailEstimateHrs":"'+detailEstimateHrs+'","effortHrs":"'+effortHrs+'","toDoHrs":"'+toDoHrs+'","doneHrs":"'+doneHrs+'"}';
 	console.log(requestPayload);
-	if(!validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs)) return;
-	
+	if(!validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs)) return false;
 	$.ajax({
 	   url: "/tracker/task/save",
 	   method: "POST",

@@ -18,7 +18,8 @@ public class MainController {
 	@RequestMapping("/board")
 	public String showTracker(Map<String, Object> model) {
 		model.put("ALL_TASK", taskRepo.findAll());
-		return "tracker";
+		//return "tracker";
+		return "demo";
 	}
 
 }

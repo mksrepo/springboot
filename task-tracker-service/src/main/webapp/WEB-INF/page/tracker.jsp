@@ -14,6 +14,7 @@
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 	    	jQuery(".save_task").click(function(){saveTask($(this).val());});
+	    	jQuery(".export_excel").click(function(){exportExcel();});
 	 	});
 	</script>
 </head>
@@ -78,6 +79,9 @@
 			<div class="text-center">
 				<a href="" class="btn btn-info btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#modalAdd">
 					Add<i class="fa fa-plus-square ml-1"></i>
+				</a>
+				<a href="" class="export_excel btn btn-info btn-rounded btn-sm waves-effect waves-light">
+					Export<i class="fa fa-plus-square ml-1"></i>
 				</a>
 			</div>
 		</div>

@@ -31,10 +31,6 @@ function saveTask(index) {
 	}); 
 }
 
-function authenticate{
-	
-}
-
 function validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs){
 	if(index==0){
 		if($('#title_0').val().trim().length==0 || $('#owner_0').val().trim().length==0 || $('#detailEstimateHrs_0').val().trim().length==0){

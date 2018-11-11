@@ -1,19 +1,7 @@
 
-function exportTask() {
-	$.ajax({
-	   url: "/tracker/export",
-	   method: "GET",
-	   //data: requestPayload,
-	   //dataType: 'text',
-	   //contentType: "application/json",
-	   success: function(result, status, jqXHR){},
-	   error(jqXHR, textStatus, errorThrown){
-		   console.log( errorThrown );
-	   }
-	}); 
-}
-
 function saveTask(index) {
+	authenticate();
+	
 	var id = $('#id_'+index).val();
 	var taskCode = $('#taskCode_'+index).val();
 	var title = $('#title_'+index).val();
@@ -41,6 +29,10 @@ function saveTask(index) {
 		   console.log( errorThrown );
 	   }
 	}); 
+}
+
+function authenticate{
+	
 }
 
 function validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs){

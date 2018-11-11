@@ -21,13 +21,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tracker.entity.Task;
+import com.tracker.model.Message;
 import com.tracker.model.TaskDTO;
 import com.tracker.repo.TaskRepository;
+import com.tracker.slack.SlackService;
 import com.tracker.util.TaskUtil;
 
 @RestController
 @RequestMapping("/tracker")
 public class ActionController {
+
+	@Autowired
+	SlackService slackService;
 
 	@Autowired
 	private TaskRepository taskRepo;
@@ -53,7 +58,12 @@ public class ActionController {
 			task.setToDoHrs(task.getToDoHrs() - task.getEffortHrs());
 		}
 		taskRepo.save(task);
-		return "The task \"" + taskDTO.getTitle() + "\" has been saved successfully.";
+		StringBuilder messageBuilder = new StringBuilder();
+		messageBuilder.append("The Task [").append(task.getTaskCode()).append("] ").append("has been updated by ").append(task.getOwner())
+			.append("\n")
+			.append("send by TTT Service.");
+		slackService.sendMessage(new Message(messageBuilder.toString()));
+		return messageBuilder.toString();
 	}
 
 	@RequestMapping(value = "/export", method = RequestMethod.GET)

@@ -59,7 +59,7 @@
 							</div>
 							<div class="md-form mb-5">
 								<input type="text" id="detailEstimateHrs_0" class="form-control validate">
-								<label for="detailEstimateHrs_0">SalaEstimate Hrs.</label>
+								<label for="detailEstimateHrs_0">Estimate Hrs.</label>
 							</div>
 						</div>
 						<div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">

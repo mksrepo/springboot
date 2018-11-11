@@ -1,7 +1,5 @@
 
 function saveTask(index) {
-	authenticate();
-	
 	var id = $('#id_'+index).val();
 	var taskCode = $('#taskCode_'+index).val();
 	var title = $('#title_'+index).val();

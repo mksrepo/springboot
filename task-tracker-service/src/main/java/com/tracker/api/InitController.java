@@ -19,7 +19,6 @@ public class InitController {
 	public String showTracker(Map<String, Object> model) {
 		model.put("ALL_TASK", taskRepo.findAll());
 		return "tracker";
-		//return "demo";
 	}
 
 }

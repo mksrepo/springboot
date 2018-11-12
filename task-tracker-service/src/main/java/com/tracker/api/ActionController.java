@@ -16,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -69,7 +70,6 @@ public class ActionController {
 
 	@RequestMapping(value = "/export", method = RequestMethod.GET)
 	public ResponseEntity<Object> downloadFile() throws IOException, URISyntaxException {
-		slackService.sendMessage(new Message("test"));
 		String filename = "csvdata.csv";
 		FileWriter filewriter = null;
 		try {
@@ -107,5 +107,21 @@ public class ActionController {
 			if (filewriter != null)
 				filewriter.close();
 		}
+	}
+	
+	
+	// delete
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+	public ResponseEntity<String> getArticleById(@PathVariable("id") Integer id) {
+		String msg;
+		HttpStatus status = HttpStatus.OK;
+		if (id == null) {
+			status = HttpStatus.BAD_REQUEST;
+			msg = "Record not deleted due to invalid task ID";
+		} else {
+			taskRepo.deleteById(id);
+			msg = "This task has been deleted";
+		}
+		return new ResponseEntity<String>(msg, status);
 	}
 }

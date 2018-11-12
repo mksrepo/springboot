@@ -19,11 +19,12 @@
 			$('table').dataTable({searching: true, paging: false, info: false});
 		    $('#example').DataTable();
 		    $(".save_task").click(function(){saveTask($(this).data("index"));});
+		    $(".delete_task").click(function(){deleteTask($(this).data("id"));});
 		});
 	</script>
 </head>
 <body>
-	<!-- Trigger the modal with a button -->
+	<!-- Modal Section -->
 	<div class="container">
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog">
@@ -141,6 +142,7 @@
 				                <td>
 				                	<input type="hidden" id="id_${loop.count}" name="id_${loop.count}"  value="${task.id}"/>
 				                	<button type="button" class="save_task btn btn-default" data-index="${loop.count}">Update</button>
+				                	<a href="#" data-id="${task.id}" class="delete_task a-style">Delete</a>
 								</td>
 				            </tr>
 				        </c:forEach>

@@ -28,6 +28,25 @@ function saveTask(index) {
 	}); 
 }
 
+function deleteTask(id) {
+	if (confirm('Are you sure you want to delete this task?')) {
+		$.ajax({
+		   url: "/tracker/"+id+"/delete",
+		   method: "GET",
+		   data: "",
+		   dataType: 'text',
+		   contentType: "application/json",
+		   success: function(result, status, jqXHR){
+			   location.reload();
+			   alert(result);
+		   },
+		   error(jqXHR, textStatus, errorThrown){
+			   console.log( errorThrown );
+		   }
+		}); 
+	} 
+}
+
 function validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs){
 	if(index==0){
 		if($('#title_0').val().trim().length==0 || $('#owner_0').val().trim().length==0 || $('#detailEstimateHrs_0').val().trim().length==0){

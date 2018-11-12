@@ -10,7 +10,7 @@ import com.tracker.repo.TaskRepository;
 
 @Controller
 @RequestMapping("/tracker")
-public class SarterController {
+public class InitController {
 
 	@Autowired
 	private TaskRepository taskRepo;

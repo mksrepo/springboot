@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Random;
 
@@ -67,7 +68,8 @@ public class ActionController {
 	}
 
 	@RequestMapping(value = "/export", method = RequestMethod.GET)
-	public ResponseEntity<Object> downloadFile() throws IOException {
+	public ResponseEntity<Object> downloadFile() throws IOException, URISyntaxException {
+		slackService.sendMessage(new Message("test"));
 		String filename = "csvdata.csv";
 		FileWriter filewriter = null;
 		try {

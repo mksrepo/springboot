@@ -36,25 +36,23 @@
 					</div>
 					<div class="modal-body">
 						<div class="md-form mb-5">
-							<label for="title_0">Title</label> <input type="text"
-								id="title_0" class="form-control">
+							<label for="title_0">Title</label>
+							<input type="text" id="title_0" class="form-control">
 						</div>
 						<div class="md-form mb-5">
-							<label for="owner_0">Owner</label> <input type="text"
-								id="owner_0" class="form-control validate">
+							<label for="owner_0">Owner</label>
+							<input type="text" id="owner_0" class="form-control validate">
 						</div>
 						<div class="md-form mb-5">
-							<label for="owner_0">Complexity</label> <select id="complexity_0"
-								class="form-control">
+							<label for="owner_0">Complexity</label> <select id="complexity_0" class="form-control">
 								<option value="Easy">Easy</option>
 								<option value="Average">Average</option>
 								<option value="Complex">Complex</option>
 							</select>
 						</div>
 						<div class="md-form mb-5">
-							<label for="detailEstimateHrs_0">Estimate Hrs.</label> <input
-								type="text" id="detailEstimateHrs_0"
-								class="form-control validate">
+							<label for="detailEstimateHrs_0">Estimate Hrs.</label>
+							<input type="text" id="detailEstimateHrs_0" class="form-control validate">
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -62,11 +60,10 @@
 						<input type="hidden" id="taskCode_0" name="taskCode_0" value="" />
 						<input type="hidden" id="effortHrs_0" name="effortHrs_0" value="0" />
 						<input type="hidden" id="doneHrs_0" name="doneHrs_0" value="0" />
-						<input type="hidden" id="toDoHrs_0" name="toDoHrs_0" value="" /> <input
-							type="hidden" id="id_0" name="id_0" value="0" />
+						<input type="hidden" id="toDoHrs_0" name="toDoHrs_0" value="" />
+						<input type="hidden" id="id_0" name="id_0" value="0" />
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="save_task btn btn-default"
-							data-index="0">Create Task</button>
+						<button type="button" class="save_task btn btn-default" data-index="0">Create Task</button>
 					</div>
 				</div>
 			</div>
@@ -78,11 +75,8 @@
 			<div class="col-sm-10">
 				<h2>Task Tracker Tool</h2>
 			</div>
-			<div class="col-sm-1">
-				<button type="button" class="" data-toggle="modal" data-target="#myModal">Plus</button>
-			</div>
-			<div class="col-sm-1">
-				<a href="/tracker/export" class="">Export</a>
+			<div class="col-sm-2">
+				<a href="#" class="a-style" data-toggle="modal" data-target="#myModal">Plus</a> || <a href="/tracker/export" class="a-style">Export</a>
 			</div>
 		</div>
 	</div>
@@ -102,9 +96,9 @@
 					<th>Action</th>
 	            </tr>
 	        </thead>
-	        <c:choose>
-				<c:when test="${fn:length(ALL_TASK) gt 0}">
-			        <tbody>
+	         <tbody class="container-min-hight">
+	        	<c:choose>
+					<c:when test="${fn:length(ALL_TASK) gt 0}">
 			        	<c:forEach var="task" items="${ALL_TASK}" varStatus="loop">
 				            <tr>
 				                <td>
@@ -150,17 +144,12 @@
 								</td>
 				            </tr>
 				        </c:forEach>
-			        </tbody>
-			    </c:when>
-				<c:otherwise>
-					<tr align="center">
-						<th colspan="10">Empty Task list. Pleas add task by using above "Add +" button.</th>
-					</tr>
-				</c:otherwise>
-			</c:choose>
+				    </c:when>
+				</c:choose>
+			</tbody>
 			<tfoot>
-				<tr align="right">
-					<th colspan="10">developed by Khushboo</th>
+				<tr>
+					<td colspan="10">developed by Khushboo</td>
 				</tr>
 			</tfoot>
 	    </table>

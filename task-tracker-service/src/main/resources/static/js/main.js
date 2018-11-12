@@ -1,4 +1,3 @@
-
 function saveTask(index) {
 	var id = $('#id_'+index).val();
 	var taskCode = $('#taskCode_'+index).val();

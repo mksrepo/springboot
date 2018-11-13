@@ -19,21 +19,22 @@
 			$('table').dataTable({searching: true, paging: false, info: false});
 		    $('#example').DataTable();
 		    $(".save_task").click(function(){saveTask($(this).data("index"));});
-		    $(".delete_task").click(function(){deleteTask($(this).data("id"));});
+		    $(".delete_task").click(function(){deleteTask($(this).val());});
+		    $(".delete_confirm").click(function(){$("#deleteModalYes").val($(this).data("id"));});
 		});
 	</script>
 </head>
 <body>
 	<!-- Modal Section -->
 	<div class="container">
-		<!-- Modal -->
+		<!-- Modal :: Task Entry -->
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Task Creation Page</h4>
+						<h4 class="modal-title">Task Creation Window</h4>
 					</div>
 					<div class="modal-body">
 						<div class="md-form mb-5">
@@ -69,8 +70,27 @@
 				</div>
 			</div>
 		</div>
+		<!-- Modal :: Confirm window -->
+		<div class="modal fade" id="confirmModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Delete Confirmation Window</h4>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete this task?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+						<button id="deleteModalYes" type="button" class="delete_task btn btn-default" value="">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
+	<!-- Data Table -->
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10">
@@ -142,7 +162,7 @@
 				                <td>
 				                	<input type="hidden" id="id_${loop.count}" name="id_${loop.count}"  value="${task.id}"/>
 				                	<button type="button" class="save_task btn btn-default" data-index="${loop.count}">Update</button>
-				                	<a href="#" data-id="${task.id}" class="delete_task a-style">Delete</a>
+				                	<a href="#" class="delete_confirm a-style" data-id="${task.id}" data-toggle="modal" data-target="#confirmModal">Delete</a>
 								</td>
 				            </tr>
 				        </c:forEach>
@@ -151,7 +171,7 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="10">developed by Khushboo</td>
+					<td colspan="10">2018</td>
 				</tr>
 			</tfoot>
 	    </table>

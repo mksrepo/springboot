@@ -20,7 +20,6 @@ function saveTask(index) {
 	   contentType: "application/json",
 	   success: function(result, status, jqXHR){
 		   location.reload();
-		   alert(result);
 	   },
 	   error(jqXHR, textStatus, errorThrown){
 		   console.log( errorThrown );
@@ -29,22 +28,19 @@ function saveTask(index) {
 }
 
 function deleteTask(id) {
-	if (confirm('Are you sure you want to delete this task?')) {
-		$.ajax({
-		   url: "/tracker/"+id+"/delete",
-		   method: "GET",
-		   data: "",
-		   dataType: 'text',
-		   contentType: "application/json",
-		   success: function(result, status, jqXHR){
-			   location.reload();
-			   alert(result);
-		   },
-		   error(jqXHR, textStatus, errorThrown){
-			   console.log( errorThrown );
-		   }
-		}); 
-	} 
+	$.ajax({
+	   url: "/tracker/"+id+"/delete",
+	   method: "GET",
+	   data: "",
+	   dataType: 'text',
+	   contentType: "application/json",
+	   success: function(result, status, jqXHR){
+		   location.reload();
+	   },
+	   error(jqXHR, textStatus, errorThrown){
+		   console.log( errorThrown );
+	   }
+	}); 
 }
 
 function validateRequest(index, title, owner, status, complexity, detailEstimateHrs, effortHrs, toDoHrs){

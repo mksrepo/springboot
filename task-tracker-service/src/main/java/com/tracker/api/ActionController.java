@@ -64,7 +64,7 @@ public class ActionController {
 		messageBuilder.append("The Task [").append(task.getTaskCode()).append("] ").append("has been Saved by ").append(task.getOwner())
 			.append("\n")
 			.append("send by TTT Service.");
-		slackService.sendMessage(new Message(messageBuilder.toString()));
+		//slackService.sendMessage(new Message(messageBuilder.toString()));
 		return messageBuilder.toString();
 	}
 

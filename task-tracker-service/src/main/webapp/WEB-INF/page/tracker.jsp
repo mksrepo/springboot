@@ -93,11 +93,14 @@
 	<!-- Data Table -->
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-10">
+			<div class="col-sm-2">
+				<img alt="" src="/img/HFU.png" width="125%"/>
+			</div>
+			<div class="col-sm-8">
 				<h2>Task Tracking Tool</h2>
 			</div>
 			<div class="col-sm-2">
-				<a href="#" class="a-style" data-toggle="modal" data-target="#myModal">Add Task</a> || <a href="/tracker/export" class="a-style">Export CSV</a>
+				<a href="#" class="a-style" data-toggle="modal" data-target="#myModal">Add Task</a>&nbsp;||&nbsp;<a href="/tracker/export" class="a-style">Export CSV</a>
 			</div>
 		</div>
 	</div>
@@ -161,19 +164,15 @@
 								</td>
 				                <td>
 				                	<input type="hidden" id="id_${loop.count}" name="id_${loop.count}"  value="${task.id}"/>
-				                	<button type="button" class="save_task btn btn-default" data-index="${loop.count}">Update</button>
-				                	<a href="#" class="delete_confirm a-style" data-id="${task.id}" data-toggle="modal" data-target="#confirmModal">Delete</a>
+				                	<a href="#" class="save_task a-style" data-index="${loop.count}">Update</a>
+				                	&nbsp;&nbsp;&nbsp;
+									<a href="#" class="delete_confirm a-style" data-id="${task.id}" data-toggle="modal" data-target="#confirmModal">Delete</a>
 								</td>
 				            </tr>
 				        </c:forEach>
 				    </c:when>
 				</c:choose>
 			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="10">2018</td>
-				</tr>
-			</tfoot>
 	    </table>
 	</div>
 </body>

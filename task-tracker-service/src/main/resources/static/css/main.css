@@ -1,11 +1,15 @@
 .header-style {
 	text-align: -webkit-center;
 	background-color: rgb(51, 181, 229);
-	color: #fff!important;
+	color: #fff !important;
 	font-weight: bold;
 }
 
 .a-style {
-    color: #000000 !important;
-    text-decoration: none;
+	color: #000000 !important;
+	text-decoration: none;
+}
+
+.thead {
+	background-color: rgb(233, 233, 233) !important;
 }

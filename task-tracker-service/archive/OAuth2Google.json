@@ -1,0 +1,16 @@
+{
+	"web": {
+		"client_id": "1162346117-884ivifcn06e9v9p0n5gedp2dvur6e4t.apps.googleusercontent.com",
+		"project_id": "ttt-project-939",
+		"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+		"token_uri": "https://www.googleapis.com/oauth2/v3/token",
+		"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+		"client_secret": "z7X0jIZf-q1rves4DOMXVaVQ",
+		"redirect_uris": [
+			"http://localhost:8080/tracker/board"
+		],
+		"javascript_origins": [
+			"http://localhost:8080"
+		]
+	}
+}

@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.tracker.repo.TaskRepository;
 
 @Controller
-@RequestMapping("/tracker")
 public class InitController {
 
 	@Autowired
 	private TaskRepository taskRepo;
 
-	@RequestMapping("/board")
+	@RequestMapping("/")
 	public String showTracker(Map<String, Object> model) {
 		model.put("ALL_TASK", taskRepo.findAll());
 		return "tracker";

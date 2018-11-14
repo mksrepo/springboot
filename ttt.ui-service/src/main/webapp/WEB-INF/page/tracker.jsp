@@ -14,19 +14,20 @@
 	<script type="text/javascript" src="/js/dataTables.bootstrap4.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('table').dataTable({searching: true, paging: true, info: false});
 		    $('#taskDataTable').DataTable();
-		    $(".save_task").click(function(){saveTask($(this).data("index"));});
-		    $(".delete_task").click(function(){deleteTask($(this).val());});
-		    $(".delete_confirm").click(function(){$("#deleteModalYes").val($(this).data("id"));});
+		    $("#taskDataTable, #modalContainer").on("click",".save_task",function(){saveTask($(this).data("index"));});
+		    $("#modalContainer").on("click",".delete_task",function(){deleteTask($(this).val());});
+		    $("#taskDataTable").on("click",".delete_confirm",function(){$("#deleteModalYes").val($(this).data("id"));});
+		    //$(".delete_confirm").click(function(){$("#deleteModalYes").val($(this).data("id"));});
 		});
 	</script>
-</head>
-<body>
 	<!-- Modal Section -->
-	<div class="container">
+	<div id="modalContainer" class="container">
 		<!-- Modal :: Task Entry -->
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">

@@ -16,8 +16,8 @@
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('table').dataTable({searching: true, paging: false, info: false});
-		    $('#example').DataTable();
+			$('table').dataTable({searching: true, paging: true, info: false});
+		    $('#taskDataTable').DataTable();
 		    $(".save_task").click(function(){saveTask($(this).data("index"));});
 		    $(".delete_task").click(function(){deleteTask($(this).val());});
 		    $(".delete_confirm").click(function(){$("#deleteModalYes").val($(this).data("id"));});
@@ -105,7 +105,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<table id="example" class="table table-striped table-bordered" style="width:100%">
+		<table id="taskDataTable" class="table table-striped table-bordered" style="width:100%">
 	        <thead>
 	            <tr>
 	                <th>Title</th>

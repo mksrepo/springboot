@@ -3,16 +3,19 @@ spring:
     view:
       prefix: /WEB-INF/page/
       suffix: .jsp
+      
   profiles: default
+  
   datasource:
     platform: h2
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/tracker_db
+    url: jdbc:h2:file:~/tttdb/tracker_db;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
   h2:
     console:
       enabled: true
+      
   jpa:
     show-sql: true
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update

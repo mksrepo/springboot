@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.io.InputStreamResource;
@@ -30,6 +31,9 @@ import com.ttt.ui.dto.Task;
 @RequestMapping("/tracker")
 public class ActionController {
 
+	@Autowired
+	RestTemplate restTemplate;
+
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
@@ -37,7 +41,8 @@ public class ActionController {
 
 	@RequestMapping(value = "/task/save", method = RequestMethod.POST)
 	public String addTask(@RequestBody Task task) throws Exception {
-		return new RestTemplate().postForObject("https://ttt-db-service.cfapps.io/db/save", task, String.class);
+		return restTemplate.postForObject("https://ttt-db-service.cfapps.io/db/save", task,
+				String.class);
 	}
 
 	@RequestMapping(value = "/export", method = RequestMethod.GET)
@@ -46,15 +51,14 @@ public class ActionController {
 		FileWriter filewriter = null;
 		try {
 			List<Task> tasks = new ArrayList<Task>();
-			ResponseEntity<List<Task>> claimResponse = new RestTemplate().exchange(
-					"https://ttt-db-service.cfapps.io/db/all", 
-					HttpMethod.GET,
-					null,
-					new ParameterizedTypeReference<List<Task>>() {});
-			if(claimResponse != null && claimResponse.hasBody()){
+			ResponseEntity<List<Task>> claimResponse = restTemplate.exchange(
+					"https://ttt-db-service.cfapps.io/db/all", HttpMethod.GET, null,
+					new ParameterizedTypeReference<List<Task>>() {
+					});
+			if (claimResponse != null && claimResponse.hasBody()) {
 				tasks = claimResponse.getBody();
 			}
-			
+
 			StringBuilder filecontent = new StringBuilder(
 					"ID, Title, Code, Owner, Status, Complexity, Estimate Hrs., Done Hrs., To Do Hrs.\n");
 			for (Task task : tasks)
@@ -89,6 +93,6 @@ public class ActionController {
 	// delete
 	@RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
 	public String getArticleById(@PathVariable("id") Integer id) {
-		return new RestTemplate().getForObject("https://ttt-db-service.cfapps.io/db/" + id + "/delete", String.class);
+		return restTemplate.getForObject("https://ttt-db-service.cfapps.io/db/" + id + "/delete", String.class);
 	}
 }

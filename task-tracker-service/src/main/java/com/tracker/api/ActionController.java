@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tracker.entity.Task;
-import com.tracker.model.Message;
 import com.tracker.model.TaskDTO;
 import com.tracker.repo.TaskRepository;
 import com.tracker.slack.SlackService;

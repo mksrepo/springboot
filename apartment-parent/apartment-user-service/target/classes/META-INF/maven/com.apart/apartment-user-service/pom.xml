@@ -18,4 +18,21 @@
 	<!-- Packaging Information -->
 	<packaging>jar</packaging>
 
+	<!-- Dependency Information -->
+	<dependencies>
+
+		<!-- Spring Boot Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Apartment Library Dependency -->
+		<dependency>
+			<groupId>com.apart</groupId>
+			<artifactId>apartment-library</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 </project>

@@ -15,10 +15,7 @@
 
 	<!-- Project Information -->
 	<name>apartment-parent</name>
-	<description></description>
-	<organization></organization>
-	<developers></developers>
-	<contributors></contributors>
+	<description>Apartment management service</description>
 	<url>http://www.apartment.com</url>
 
 	<!-- Global Properties -->
@@ -29,12 +26,25 @@
 	</properties>
 
 	<!-- Dependency Descriptions -->
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Spring Boot Dependency -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<type>pom</type>
+				<version>2.0.2.RELEASE</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
+
 		<!-- Test Dependency -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

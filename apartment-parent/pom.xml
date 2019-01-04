@@ -38,11 +38,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<!-- Module Details -->
 	<modules>
-		<module>apartment-war</module>
 		<module>apartment-user-service</module>
+		<module>apartment-library</module>
 	</modules>
-	
+
 </project>

@@ -21,6 +21,13 @@
 	<contributors></contributors>
 	<url>http://www.apartment.com</url>
 
+	<!-- Global Properties -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
 	<!-- Dependency Descriptions -->
 	<dependencies>
 		<!-- Test Dependency -->
@@ -31,4 +38,10 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<!-- Module Details -->
+	<modules>
+		<module>apartment-war</module>
+	</modules>
+	
 </project>

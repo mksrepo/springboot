@@ -42,6 +42,7 @@
 	<!-- Module Details -->
 	<modules>
 		<module>apartment-war</module>
+		<module>apartment-user-service</module>
 	</modules>
 	
 </project>

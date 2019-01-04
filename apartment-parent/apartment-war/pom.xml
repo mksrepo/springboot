@@ -11,7 +11,11 @@
 		<artifactId>apartment-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
+
+	<!-- Maven Coordinate -->
 	<artifactId>apartment-war</artifactId>
+
+	<!-- Packaging Information -->
 	<packaging>war</packaging>
 
 	<!-- Build Information -->

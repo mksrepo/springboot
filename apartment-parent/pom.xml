@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Default Module Version -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Maven Coordinate -->
+	<groupId>com.apart</groupId>
+	<artifactId>apartment-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<!-- Packaging Information -->
+	<packaging>pom</packaging>
+
+	<!-- Project Information -->
+	<name>apartment-parent</name>
+	<description></description>
+	<organization></organization>
+	<developers></developers>
+	<contributors></contributors>
+	<url>http://www.apartment.com</url>
+
+	<!-- Dependency Descriptions -->
+	<dependencies>
+		<!-- Test Dependency -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

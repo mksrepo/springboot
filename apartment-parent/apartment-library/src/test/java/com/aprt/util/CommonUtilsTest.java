@@ -58,7 +58,7 @@ public class CommonUtilsTest {
 	@Test
 	public void testIsEmptyObject_negative() {
 
-		// assert null object
+		// Asserting null object
 		assertFalse(CommonUtils.isEmptyObject(new Object()));
 	}
 }

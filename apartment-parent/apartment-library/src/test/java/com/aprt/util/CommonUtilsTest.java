@@ -1,6 +1,5 @@
 /*
  * CommonUtilsTest.java
- * Copyright (c) 2019 Binary Total Solutions
  * 
  * Description: test class for common utility provider
  * 

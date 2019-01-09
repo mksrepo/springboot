@@ -1,6 +1,5 @@
 /*
  * CommonUtils.java
- * Copyright (c) 2019 Binary Total Solutions
  * 
  * Description: common utility provider
  * 

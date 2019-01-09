@@ -1,6 +1,5 @@
 /*
  * Application.java
- * Copyright (c) 2019 Binary Total Solutions
  * 
  * Description: application starter
  * 

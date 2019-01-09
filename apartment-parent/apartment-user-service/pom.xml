@@ -35,4 +35,18 @@
 		</dependency>
 	</dependencies>
 
+	<!-- Build Information -->
+	<build>
+
+		<!-- Plugins Information -->
+		<plugins>
+		
+			<!-- PCF Plugin -->
+			<plugin>
+				<groupId>org.cloudfoundry</groupId>
+				<artifactId>cf-maven-plugin</artifactId>
+				<version>1.0.0.M1</version>
+			</plugin>
+		</plugins>
+	</build>
 </project>

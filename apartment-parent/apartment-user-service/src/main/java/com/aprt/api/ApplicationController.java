@@ -37,7 +37,7 @@ public class ApplicationController {
 	 * @return Nothing
 	 * @exception Nothing
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String getServiceInfo() {
 		return "Welcome! To the Maven World ('_')";
 	}

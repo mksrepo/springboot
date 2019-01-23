@@ -24,6 +24,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.configuration.library.skiptest>false</maven.configuration.library.skiptest>
+		<maven.pcf.plugin.testmessage>from Maven World</maven.pcf.plugin.testmessage>
 	</properties>
 
 	<!-- Plugin Repositories -->
@@ -60,6 +61,30 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<!-- Plugin Description -->
+	<build>
+		<plugins>
+
+			<!-- Custom PCF Plugin -->
+			<plugin>
+				<groupId>com.mvn.jpcf</groupId>
+				<artifactId>maven-pcf-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<configuration>
+					<msg>${maven.pcf.plugin.testmessage}</msg>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>hello</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<!-- Module Details -->
 	<modules>
